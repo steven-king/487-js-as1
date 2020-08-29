@@ -20,4 +20,6 @@ Step 5. Open the files and do your assignment. I suggest commiting after each qu
 Step 6. When finished, push your code to your repo using 
 <code> git push origin branch-name</code>
 
-Step 7. Go to my repo: https://github.com/steven-king/487-js-as1 and submit a pull request for your branch. 
+Step 7. On your repo, do a pull request and merge it with the master branch on your repo
+
+Step 9. Go to my repo: https://github.com/steven-king/487-js-as1 and submit a pull request for your branch. 
