@@ -20,9 +20,9 @@ document.getElementById("answer2").innerHTML=d.getMonth()+1+"-"+d.getDate()+"-"+
 
 */
 
-
-
-
+function myFunction() {
+  document.getElementById("answer3").innerHTML="Replace this text with a button. Then when button is clicked. The code of the page appears below the button.";
+}
 
 /* 4.--------
 
