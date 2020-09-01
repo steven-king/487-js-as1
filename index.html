@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html id="content" lang="en">
 <head>
   <meta charset="utf-8">
 
@@ -27,7 +27,8 @@
       <p>Today is Monday.<br/>
 Current Time : 8:55:25 PM</p>
       <h4>Answer:</h4>
-    <div class="answer" id="answer1">answer-here</div>
+    <div class="answer" id="answer1">
+    </div>
 
     </li>
 
@@ -41,16 +42,19 @@ Current Time : 8:55:25 PM</p>
 
     <li>Write an HTML button below and when it clicks, it prints/displays the content of the current html page (current window).
         <h4>Answer:</h4>
-        <div class="answer" id="answer3">Replace this text with a button. Then when button is clicked. The code of the page appears below the button. </div>
+        <div class="answer" id="answer3" >
+          <button onclick="clickMe()">Click Me</button>
+        </div>
     </li>
 
     <li>Follow the instructions on Chapter 1 part Hello World and and Draw the graphics below in the id called main-canvas.
     </li>
 
+    <canvas id="mainCanvas"></canvas>
+
   </ol>
-  <canvas id="main-canvas"></canvas>
 
-
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.js"></script>
   <script src="js/main.js"></script>
 </body>
