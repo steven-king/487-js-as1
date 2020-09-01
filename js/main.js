@@ -3,12 +3,15 @@
 // Test on Addison branch
 
 var d = new Date();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 /* 1.--------
  Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
 */
 
-document.getElementById("answer1").innerHTML=d;
+document.getElementById("answer1").innerHTML=
+"Today is "+days[d.getDay()]+
+".<br>Current time: "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 
 /* 2.--------
 
@@ -24,8 +27,10 @@ document.getElementById("answer2").innerHTML=
 */
 
 function myFunction() {
-  document.getElementById("answer3").innerHTML="Replace this text with a button. Then when button is clicked. The code of the page appears below the button.";
+  document.getElementById("answer3").innerHTML="index.html";
 }
+
+// Replace this text with a button. Then when button is clicked. The code of the page appears below the button.
 
 /* 4.--------
 
