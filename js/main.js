@@ -60,6 +60,8 @@ document.getElementById("answer2").innerHTML =
 Write an HTML button below and when it clicks, it prints/displays the content of the current html page (current window).
 */
 
+//comment
+
 var htmlCode = document.documentElement.innerHTML;
 
 function myFunction() {
