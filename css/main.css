@@ -1,4 +1,8 @@
-
+#main-canvas {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+}
 
 .answer{
   border:1px solid #56A0D3;
