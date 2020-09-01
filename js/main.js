@@ -1,7 +1,9 @@
 //In the space below each problem, write the code to answer. This page connects to index.html
 // Dont forget to do the PR after you are done.
 
-/* 1.--------Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "answer1"*/
+/* 1.--------
+ Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
+*/
 //adapted from https://stackoverflow.com/questions/18536726/javascript-to-display-the-current-date-and-time
 var today = new Date();
 
@@ -35,7 +37,9 @@ document.getElementById('answer1').innerHTML = "Today is " + weekday + ". <br> C
 console.log(weekday);
 console.log(currentTime);
 
-/* 2.--------Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "answer2"*/
+/* 2.--------
+
+*/
 var yyyy = today.getFullYear();
 var mm = today.getMonth() + 1;
 var dd = today.getDate();
@@ -62,7 +66,9 @@ console.log(mm);
 console.log(dd);
 console.log(yyyy);
 
-/* 3.--------Write an HTML button below and when it clicks, it prints/displays the content of the current html page (current window).*/
+/* 3.--------
+
+*/
 //adapted from https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript
 function showHTML() {
     
@@ -73,7 +79,9 @@ function showHTML() {
 
 console.log("Question 3: Display content in index.html");
 
-/* 4.--------Follow the instructions on Chapter 1 part Hello World and and Draw the graphics below in the id called main-canvas.*/
+/* 4.--------
+
+*/
 paper.install(window);
 paper.setup(document.getElementById('main-canvas'));
 //var c = Shape.Circle(100, 80, 70); 
