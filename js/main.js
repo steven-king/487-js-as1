@@ -59,10 +59,12 @@ document.getElementById("answer2").innerHTML =
 /* 3.--------
 Write an HTML button below and when it clicks, it prints/displays the content of the current html page (current window).
 */
+
+var htmlCode = document.documentElement.innerHTML;
+
 function myFunction() {
-  document.getElementById("answer3").innerHTML = " ";
+  document.getElementById("answer3").innerHTML = htmlCode;
 }
-//var htmlCode =
 
 /* 4.--------
 Follow the instructions on Chapter 1 part Hello World and and Draw the graphics below in the id called main-canvas.
