@@ -14,7 +14,10 @@ document.getElementById("answer1").innerHTML=d;
 
 */
 
-document.getElementById("answer2").innerHTML=d.getMonth()+1+"-"+d.getDate()+"-"+d.getFullYear();
+document.getElementById("answer2").innerHTML=
+(d.getMonth()+1)+"-"+d.getDate()+"-"+d.getFullYear()+"<br>"
++(d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear()+"<br>"
++d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
 
 /* 3.--------
 
