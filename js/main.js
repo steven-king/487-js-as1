@@ -72,10 +72,14 @@ document.getElementById('answer2').innerHTML = dateall;
 
 /* 3.--------*/
 
-function load_home() {
+function load_html() {
 //Code credits to https://stackoverflow.com/questions/817218/how-to-get-the-entire-document-html-as-a-string#answer-35917295
 var markup = document.documentElement.innerHTML;
 document.getElementById('answer3').innerText = markup;
+}
+function load_home() {
+  var markup2 = document.documentElement.innerHTML;
+  document.getElementById('answer3').innerHTML = markup2;
 }
 
 /* 4.--------*/
@@ -87,9 +91,9 @@ $(document).ready(function () {
 
  var tool = new Tool();
 
- var c = Shape.Circle(100, 100, 80);
+ var c = Shape.Circle(200, 200, 80);
  c.fillColor = 'black';
- var text = new PointText(100, 100);
+ var text = new PointText(200, 200);
  text.justification = 'center';
  text.fillColor = 'white';
  text.fontSize = 20;
