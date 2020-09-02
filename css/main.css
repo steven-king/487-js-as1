@@ -1,7 +1,16 @@
-
-
 .answer{
   border:1px solid #56A0D3;
   width:50%;
   min-height:50px;
+}
+
+li{
+    margin-top: 50px;
+}
+
+#main-canvas {
+    margin-top: 30px;
+    min-width: 400px;
+    height: 400px;
+    border:1px solid #000000;
 }
