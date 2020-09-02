@@ -47,7 +47,41 @@ document.getElementById('answer2').innerHTML =
 /* 3.--------
 
 */
+function btnClick() {
+	var elmnt = document.getElementsByTagName('html')[0];
+	var cln = elmnt.cloneNode(true);
+	var clnHTML = document.getElementById('answer3').appendChild(cln);
+}
+
+document.getElementById('answer3').innerHTML =
+	'<button id="js-btn">Click Here</button>';
+
+document.getElementById('js-btn').onclick = btnClick;
 
 /* 4.--------
 
 */
+
+$(document).ready(function () {
+	'use strict';
+	paper.install(window);
+	paper.setup(document.getElementById('main-canvas'));
+
+	var tool = new Tool();
+
+	var c = Shape.Circle(200, 200, 80);
+	c.fillColor = 'black';
+	var text = new PointText(200, 200);
+	text.justification = 'center';
+	text.fillColor = 'white';
+	text.fontSize = 20;
+	text.content = 'hello world';
+	tool.onMouseDown = function (event) {
+		var c = Shape.Circle(event.point, 20);
+		c.fillColor = 'green';
+	};
+
+	paper.view.draw();
+
+	console.log('main.js loaded');
+});
