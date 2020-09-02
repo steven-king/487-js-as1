@@ -72,34 +72,36 @@ console.log(yyyy);
 /* 3.--------
 
 */
-//adapted from https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript
-function showHTML() {
-    
-    //Answer
-    document.getElementById("html").innerHTML =
-        '<object type="text/html" data="index.html" ></object>';
+//adapted from https://stackoverflow.com/questions/817218/how-to-get-the-entire-document-html-as-a-string
+function showHTML(){
+    document.getElementById("answer3").innerText = document.documentElement.innerHTML;
 }
 
-console.log("Question 3: Display content in index.html");
-
+console.log("Show HTML Source Code");
 
 
 
 /* 4.--------
 
 */
-paper.install(window);
-paper.setup(document.getElementById('main-canvas'));
-//var c = Shape.Circle(100, 80, 70); 
-//c.fillColor = 'green';
-var c = Shape.Circle(200, 100, 80);
-c.fillColor = 'black';
-var text = new PointText(200, 100);
-text.justification = 'center';
-text.fillColor = 'white';
-text.fontSize = 20;
-text.content = 'hello world';
+$(document).ready(function () {
+	'use strict';
+	paper.install(window);
+	paper.setup(document.getElementById("main-canvas"));
+    
+	var tool = new Tool();
 
-paper.view.draw();
-
-console.log("Question 4: Hello World Practice");
+	var c = Shape.Circle(200, 200, 80);
+	c.fillColor = 'black';
+	var text = new PointText(200, 200);
+	text.justification = 'center';
+	text.fillColor = 'white';
+	text.fontSize = 20;
+	text.content = 'hello world';
+    
+	tool.onMouseDown = function(event) {
+        var c = Shape.Circle(event.point.x, event.point.y, 20); 
+        c.fillColor = 'green';
+};
+	paper.view.draw();
+});
