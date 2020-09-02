@@ -37,6 +37,7 @@ function printpage() {
   document.getElementById("answer3").innerHTML = show;
 };
 
+//i couldn't figure this one out
 
 
 
