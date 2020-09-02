@@ -1,7 +1,6 @@
 //In the space below each problem, write the code to answer. This page connects to index.html
 // Dont forget to do the PR after you are done.
 // Test on Addison branch
-
 var d = new Date();
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -27,7 +26,7 @@ document.getElementById("answer2").innerHTML=
 */
 
 function myFunction() {
-  document.getElementById("answer3").innerHTML="index.html";
+  document.getElementById("answer3").innerHTML=alert(document.body.innerHTML);
 }
 
 // Replace this text with a button. Then when button is clicked. The code of the page appears below the button.
