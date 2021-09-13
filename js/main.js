@@ -45,7 +45,27 @@ function myFunction() {
 */
 //
    
+$(document).ready(function() { 'use strict'; 
+      console.log('main.js loaded');
+                                 
 
+    paper.install(window); 
+    paper.setup(document.getElementById('main-canvas'));
+
+    var tool = new Tool();
+
+    var circle = Shape.Circle(200, 200, 100); 
+    circle.fillColor = 'black';
+    var text = new PointText(200, 200); text.justification = 'center'; text.fillColor = 'white'; 
+    text.fontSize = 16;
+    text.content = 'hello world';
+
+    tool.onMouseDown = function(event) {
+        var circle = Shape.Circle(event.point.x, event.point.y, 20); circle.fillColor = 'skyblue';
+    };
+
+    paper.view.draw();
+    });
    
 
    
