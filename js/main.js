@@ -10,16 +10,23 @@ var date = new Date();
 const TimeFormat = new Intl.DateTimeFormat('en', { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
 const [{ value: weekday },,{ value: hour },,{ value: minute },,{ value: second },,{ value: hour12 }] = TimeFormat.formatToParts(date); 
 
-var date0 = `Today is ${weekday}.<br />Current Time: ${hour}:${minute}:${second} ${hour12}`
-var currenttime = `Current Time: ${hour}:${minute}:${second} ${hour12}`;
+var date_time = `Today is ${weekday}.<br/>Current Time: ${hour}:${minute}:${second} ${hour12}`
 
-document.getElementById("answer1").innerHTML = date0;
+document.getElementById("answer1").innerHTML = date_time;
 
 /* 2.--------
 
 */
 
+const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: '2-digit', day: '2-digit' });
+const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat.formatToParts(date); 
 
+var date = `${month}-${day}-${year}<br />${month}/${day}/${year}<br />${day}/${month}/${year}`;
+console.log(`${month}-${day}-${year}`)
+console.log(`${month}-${day}-${year}`)
+console.log(`${month}-${day}-${year}`)
+
+document.getElementById("answer2").innerHTML = date;
 
 // adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
 
