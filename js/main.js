@@ -35,7 +35,10 @@ document.getElementById("answer2").innerHTML = date;
 
 */
 
-
+function myFunction() {
+    var text = document.documentElement.innerHTML;
+    document.getElementById('answer3').innerText= text;
+    }
 
 /* 4.--------
 
