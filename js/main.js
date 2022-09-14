@@ -2,13 +2,19 @@
  Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
 */
 var date = new Date();
-const TimeFormat = new Intl.DateTimeFormat('en', { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
-const [{ value: weekday },,{ value: hour },,{ value: minute },,{ value: second },,{ value: hour12 }] = TimeFormat.formatToParts(date); 
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-var date0 = `Today is ${weekday}.<br />Current Time: ${hour}:${minute}:${second} ${hour12}`
-var currenttime = `Current Time: ${hour}:${minute}:${second} ${hour12}`;
+const d = new Date();
+var amOrPm = (d.getHours() < 12) ? "AM" : "PM";
 
-document.getElementById("answer1").innerHTML = date0;
+const time = new Date().toLocaleString([], { hour: 'numeric', minute: 'numeric', second:'numeric' });
+
+let day = weekday[d.getDay()];
+let dateFormated = "Today is " + day + '.' + "<br>Current Time :" + " "+ time + ' ' + amOrPm;   
+
+
+
+document.getElementById("answer1").innerHTML = dateFormated;
 
 //adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
 
@@ -17,18 +23,23 @@ document.getElementById("answer1").innerHTML = date0;
 /* 2.--------
 */
 
-const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: '2-digit', day: '2-digit' });
-const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat.formatToParts(date); 
+var dates = new Date();
 
+var dd = today.getDate();
 
-var date1 = `${month}-${day}-${year}<br />${month}/${day}/${year}<br />${day}/${month}/${year}`;
-var date2 = `${month}/${day}/${year}`;
-var date3 = `${day}/${month}/${year}`;
-console.log(`${month}-${day}-${year}`)
-console.log(`${month}-${day}-${year}`)
-console.log(`${month}-${day}-${year}`)
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10) 
+{
+    dd='0'+dd;
+} 
 
-document.getElementById("answer2").innerHTML = date1;
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+dates = mm+'-'+dd+'-'+yyyy+ "<br>"+ mm + '/'+dd+'/'+yyyy + "<br>"+ dd + '/'+mm+'/'+yyyy;
+document.getElementById("answer2").innerHTML = dates;
 
 // adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
 
@@ -38,10 +49,10 @@ document.getElementById("answer2").innerHTML = date1;
 
 
 function myFunction() {
-var text = document.documentElement.innerHTML;
-//document.body.appendChild(text);
-document.getElementById('answer3').innerText= text;
+    var content = document.documentElement.innerHTML;
+    document.getElementById('answer3').innerText= content;
 }
+
 
 //adapt from https://stackoverflow.com/questions/817218/how-to-get-the-entire-document-html-as-a-string#answer-35917295
 
@@ -50,27 +61,28 @@ document.getElementById('answer3').innerText= text;
 /* 4.--------
 */
 //
-    $(document).ready(function() { 'use strict'; 
-      console.log('main.js loaded');
+   $(document).ready(function() { 'use strict'; 
+console.log('main.js loaded');
 
 
-    paper.install(window); 
-    paper.setup(document.getElementById('main-canvas'));
+paper.install(window); 
+paper.setup(document.getElementById('main-canvas'));
 
-    var tool = new Tool();
+var pentool = new Tool();
 
-    var c = Shape.Circle(200, 200, 80); 
-    c.fillColor = 'black';
-    var text = new PointText(200, 200); text.justification = 'center'; text.fillColor = 'white'; 
-    text.fontSize = 20;
-    text.content = 'hello world';
+var c = Shape.Circle(200, 200, 80);
+ 
+c.fillColor = 'blue';
+var text = new PointText(200, 200); text.justification = 'center'; text.fillColor = 'white'; 
+text.fontSize = 30;
+text.content = 'Hello world';
 
-    tool.onMouseDown = function(event) {
-        var c = Shape.Circle(event.point.x, event.point.y, 20); c.fillColor = 'green';
-    };
+pentool.onMouseDown = function(event) {
+  var c = Shape.Circle(event.point.x, event.point.y, 10); c.fillColor = 'black';
+};
 
-    paper.view.draw();
-     });
+paper.view.draw();
+});
 
 
 
