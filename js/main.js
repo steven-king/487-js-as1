@@ -2,7 +2,11 @@
  Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
 */
 var date = new Date();
+const WEEKDAY = getWeekdayAsString(date.getDay());
+const TIME = getAmPmString(date.getHours());
 
+
+let date0 = `<p>Today is ${WEEKDAY}.<br>Current Time: ${TIME}</p>`;
 document.getElementById("answer1").innerHTML = date0;
 
 //adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
@@ -37,3 +41,35 @@ document.getElementById("answer2").innerHTML = date1;
 
 
 // adapt from Learning Javascript Ethan Brown Chapter 1
+
+
+function getWeekdayAsString(dayAsInt) {
+    switch(dayAsInt) {
+        case 0:
+            return "Sunday";
+        case 1: 
+            return "Monday";
+        case 2: 
+            return "Tuesday";
+        case 3: 
+            return "Wednesday";
+        case 4:
+            return "Thursday";
+        case 5:
+            return "Friday";
+        case 6:
+            return "Saturday";
+
+    }
+}
+
+function getAmPmString(hours) {
+    let suffix = "AM";
+    if(hours >= 12) {
+        suffix = "PM"
+        if (hours >= 13) {
+            hours -= 11;
+        }
+    }
+    return `${hours}:${date.getMinutes()}:${date.getSeconds()} ${suffix}`;
+}
