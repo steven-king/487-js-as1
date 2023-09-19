@@ -1,12 +1,12 @@
-/* 1.--------
- Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
-*/
 var date = new Date();
 const WEEKDAY = getWeekdayAsString(date.getDay());
 const TIME = getAmPmString(date.getHours());
 
+/* 1.--------
+ Write the JavaScript to display the current day and time in the following format and output it to the html page to the span with an id of "question-1"
+*/
 
-let date0 = `<p>Today is ${WEEKDAY}.<br>Current Time: ${TIME}</p>`;
+let date0 = `Today is ${WEEKDAY}.<br>Current Time: ${TIME}`;
 document.getElementById("answer1").innerHTML = date0;
 
 //adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
@@ -16,7 +16,9 @@ document.getElementById("answer1").innerHTML = date0;
 /* 2.--------
 */
 
-
+let date1 = `${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}-${date.getDate()}-${date.getFullYear()}
+<br>${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}/${date.getDate()}/${date.getFullYear()}
+<br>${date.getDate()}/${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}/${date.getFullYear()}`;
 document.getElementById("answer2").innerHTML = date1;
 
 // adapt from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
@@ -43,6 +45,7 @@ document.getElementById("answer2").innerHTML = date1;
 // adapt from Learning Javascript Ethan Brown Chapter 1
 
 
+// task 1 functions
 function getWeekdayAsString(dayAsInt) {
     switch(dayAsInt) {
         case 0:
@@ -73,3 +76,5 @@ function getAmPmString(hours) {
     }
     return `${hours}:${date.getMinutes()}:${date.getSeconds()} ${suffix}`;
 }
+// end task 1 functions
+// task 2 functions
