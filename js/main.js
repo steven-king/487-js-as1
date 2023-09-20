@@ -5,7 +5,9 @@ var date = new Date();
 */
 
 const WEEKDAY = getWeekdayAsString(date.getDay());
-const TIME = getAmPmString(date.getHours());
+let utcHours = parseInt(date.getHours()); 
+const trueHours = utcHours === 1 ? 24 : --utcHours;
+const TIME = getAmPmString(trueHours);
 let date0 = `Today is ${WEEKDAY}.<br>Current Time: ${TIME}`;
 // task 1 functions
 function getWeekdayAsString(dayAsInt) {
@@ -35,7 +37,9 @@ function getAmPmString(hours) {
             hours -= 11;
         }
     }
-    return `${hours}:${date.getMinutes()}:${date.getSeconds()} ${suffix}`;
+    trueMins = parseInt(date.getMinutes());
+    trueSec = parseInt(date.getSeconds());
+    return `${hours}:${trueMins < 10 ? "0" + trueMins : trueMins}:${trueSec < 10 ? "0" + trueSec : trueSec} ${suffix}`;
 }
 // end task 1 functions
 document.getElementById("answer1").innerHTML = date0;
@@ -45,9 +49,10 @@ document.getElementById("answer1").innerHTML = date0;
 /* 2.--------
 */
 
-let date1 = `${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}-${date.getDate()}-${date.getFullYear()}
-<br>${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}/${date.getDate()}/${date.getFullYear()}
-<br>${date.getDate()}/${date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth()}/${date.getFullYear()}`;
+const trueMonth = parseInt(date.getMonth()) + 1;
+let date1 = `${trueMonth > 9 ? trueMonth : "0" + trueMonth}-${date.getDate()}-${date.getFullYear()}
+<br>${trueMonth > 9 ? trueMonth : "0" + trueMonth}/${date.getDate()}/${date.getFullYear()}
+<br>${date.getDate()}/${trueMonth > 9 ? trueMonth : "0" + trueMonth}/${date.getFullYear()}`;
 
 document.getElementById("answer2").innerHTML = date1;
 
