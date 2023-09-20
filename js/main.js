@@ -5,7 +5,9 @@ var date = new Date();
 */
 
 const WEEKDAY = getWeekdayAsString(date.getDay());
-const TIME = getAmPmString(date.getHours());
+let utcHours = parseInt(date.getHours()); 
+const trueHours = utcHours === 1 ? 24 : --utcHours;
+const TIME = getAmPmString(trueHours);
 let date0 = `Today is ${WEEKDAY}.<br>Current Time: ${TIME}`;
 // task 1 functions
 function getWeekdayAsString(dayAsInt) {
